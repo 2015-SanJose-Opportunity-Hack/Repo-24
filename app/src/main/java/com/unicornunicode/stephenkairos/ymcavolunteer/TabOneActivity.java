@@ -15,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -164,7 +167,6 @@ public class TabOneActivity extends AppCompatActivity {
 
             ArrayList<String> ArrayID = new ArrayList<String>();
 
-
             ParseUser currentUser = ParseUser.getCurrentUser();
             if (currentUser != null) {
                 // do stuff with the user
@@ -190,19 +192,23 @@ public class TabOneActivity extends AppCompatActivity {
                         }
                     }});
             }
+            ArrayList<Integer> hours = new ArrayList<Integer>();
+            for(UserData d: dataList) {
+                hours.add(d.hours);
+            }
 
+            ArrayAdapter<Integer> mHourAdapter;
+            mHourAdapter = new ArrayAdapter<Integer>(getActivity(),R.layout.list_item_hour, R.id.list_item_hour_textview, hours);
 
-//            mForecastAdapter = new ArrayAdapter<String>(getActivity(),R.layout.list_item_forecast, R.id.list_item_forecast_textview, weatherList);
-//
-//            ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
-//            listView.setAdapter(mForecastAdapter);
-//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-//                    String forecast = mForecastAdapter.getItem(position);
-//                    Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
-//                }
-//            });
+            final ListView listView = (ListView) rootView.findViewById(R.id.listview_hourlog);
+            listView.setAdapter(mHourAdapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                    int forecast = 0;
+                    //Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
+                }
+            });
             return rootView;
         }
     }
