@@ -18,13 +18,14 @@
     </string>
     <string name="title_activity_main">Home</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="about_us">Project Cornerstone is building a community where all adults support children and teenagers so that they thrive. We work within the YMCA of Silicon Valley and more than 200 schools and community partners to influence the personal behavior of adults toward children and teens, strengthen youth-serving programs and impact public policy.
+
+We offer a portfolio of programs and services that educate and inspire individuals and organizations more intentionally and effectively support children and teens:</string>
 
     <string name="hours_title">Activity Hours</string>
     <string name="assignments_title">Assignments</string>
     <string name="profile_title">My Profile</string>
 
     <string name="action_register">Register</string>
-    <string name="title_activity_tab_one">TabOneActivity</string>
 
 </resources>

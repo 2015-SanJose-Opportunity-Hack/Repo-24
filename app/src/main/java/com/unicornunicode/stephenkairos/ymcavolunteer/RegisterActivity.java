@@ -235,7 +235,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
                     if (e == null) {
                         // Hooray! Let them use the app now
                         showProgress(false);
-                        startActivity(new Intent(getApplicationContext(), TabOneActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TabbedActivity.class));
                     } else {
                         // Sign up didn't succeed. Look at the ParseException
                         // to figure out what went wrong

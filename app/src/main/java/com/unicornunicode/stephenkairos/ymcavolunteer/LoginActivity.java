@@ -32,7 +32,6 @@ import android.widget.Toast;
 import com.facebook.FacebookSdk;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
@@ -70,12 +69,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
-
 
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
@@ -207,7 +200,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 public void done(ParseUser user, ParseException e) {
                     if (user != null) {
                         // Hooray! The user is logged in.
-                        startActivity(new Intent(getApplicationContext(), TabOneActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TabbedActivity.class));
                     } else {
                         // Signup failed. Look at the ParseException to see what happened.
                         showProgress(false);

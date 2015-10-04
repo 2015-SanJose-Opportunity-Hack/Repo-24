@@ -29,16 +29,9 @@
             android:name=".RegisterActivity"
             android:label="@string/action_register" >
         </activity>
-        <activity android:name=".HoursActivity" >
-        </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".TabbedActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".TabOneActivity"
-            android:label="@string/title_activity_tab_one"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
